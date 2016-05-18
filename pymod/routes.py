@@ -9,7 +9,7 @@ app = flask.Flask('pymod')
 
 @app.route('/')
 def root():
-    return 'Hello, pymod'
+    return open('storefront.html').read()
 
 @app.route('/<term>')
 def search(term):

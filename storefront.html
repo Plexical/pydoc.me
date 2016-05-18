@@ -1,0 +1,79 @@
+<!-- -*- mode:web -*- -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Jacob Oscarson <jacob@plexical.com>">
+    <title>pymod.me - mdn.io inspired documentation shortcuts for
+      Python</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link
+       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+       rel="stylesheet">
+
+    <link
+       href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+       rel="stylesheet" type="text/css">
+
+    <style>
+     body {
+       font-family: 'Roboto', sans-serif;
+       font-weight:400;
+       background-color: #eee;
+     }
+    </style>
+  </head>
+
+  <body>
+    <div id="hero" class="container">
+      <div id="hero-row" class="row">
+        <div id="hero-text" class="col-md-6" style="margin-top:50px;">
+          <h4>pymod.me - quick redirects to Python documentation</h4>
+          <p>
+            pymod.me is a shortcut service that will redirect you to
+            official Python documentation by opinionated jumps using
+            simple search terms in the URL. I have been
+            using <a href="http://mdn.io">mdn.io</a> for a while and
+            wanted to have the same funcitonallity when I was
+            developing Python too. Try for example:
+
+            <ul>
+              <li>
+                <a href="/itertools">/itertools</a> - Jumps to the
+                official <em>Itertools</em> docs.
+              </li>
+              <li>
+                <a href="/chain.from_iterable">/chain.from_iterable</a> - Jumps to the
+                official <em>itertools.chain.from_iterable</em> docs.
+              </li>
+            </ul>
+          </p>
+          <p>
+            pymod.me is opinionated in the sense that it will
+            currently default to Python 3 documentation. If you want
+            to jump directly to Python 2 docs, put a <pre>/2/</pre>
+            before your search term, like this:
+
+            <ul>
+              <li>
+                <a href="/2/itertools">/2/itertools</a> - Jumps to the
+                official <em>Itertools</em> for Python 2.x docs.
+              </li>
+              <li>
+                <a href="/2/chain.from_iterable">/2/chain.from_iterable</a> - Jumps to the
+                official <em>itertools.chain.from_iterable</em> for
+                Python 2.x docs.
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
