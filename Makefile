@@ -28,9 +28,18 @@ run:
 dist:
 	$(VPYTHON) setup.py sdist
 
-.PHONY: config
-config:
+.PHONY: config-stage
+config-stage:
 	scp conf/stage/index.py wf:~/webapps/pymod_stage/htdocs/index.py
+
+.PHONY: push-stage
+push-stage: dist
+	scp dist/pymod.me-*.tar.gz wf:~/webapps/pymod_stage
+
+.PHONY: deploy-stage
+deploy-stage: config-stage push-stage
+	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade pymod.me-*.tar.gz"
+	ssh wf "~/webapps/pymod_stage/apache2/bin/restart"
 
 .PHONY: rebuild
 rebuild: clean all
