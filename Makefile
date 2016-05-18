@@ -24,5 +24,9 @@ clean:
 run:
 	$(VPYTHON) pymod
 
+.PHONY: dist
+dist:
+	$(VPYTHON) setup.py sdist
+
 .PHONY: rebuild
 rebuild: clean all
