@@ -28,5 +28,9 @@ run:
 dist:
 	$(VPYTHON) setup.py sdist
 
+.PHONY: config
+config:
+	scp conf/stage/index.py wf:~/webapps/pymod_stage/htdocs/index.py
+
 .PHONY: rebuild
 rebuild: clean all
