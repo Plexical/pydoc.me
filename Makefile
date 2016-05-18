@@ -12,9 +12,13 @@ $(PIP):
 
 deps: $(PIP)
 	$(VPYTHON) setup.py develop
+	$(PIP) install -r development.txt
 
 env: deps
 
 .PHONY: clean
 clean:
 	rm -rf bin include lib .Python pip-selfcheck.json
+
+.PHONY: rebuild
+rebuild: clean all
