@@ -1,0 +1,5 @@
+3,itertools,https://docs.python.org/3/library/itertools.html
+3,accumulate,https://docs.python.org/3/library/itertools.html#itertools.accumulate
+3,chain,https://docs.python.org/3/library/itertools.html#itertools.chain
+3,chain.from_iterable,https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable
+3,combinations,https://docs.python.org/3/library/itertools.html#itertools.combinations
