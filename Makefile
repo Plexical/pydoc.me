@@ -39,6 +39,10 @@ push-stage: dist
 .PHONY: deploy-stage
 deploy-stage: config-stage push-stage
 	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade pymod.me-*.tar.gz"
+	make restart-stage
+
+.PHONY: restart-stage
+restart-stage:
 	ssh wf "~/webapps/pymod_stage/apache2/bin/restart"
 
 .PHONY: rebuild
