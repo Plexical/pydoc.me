@@ -20,5 +20,9 @@ env: deps
 clean:
 	rm -rf bin include lib .Python pip-selfcheck.json
 
+.PHONY: run
+run:
+	$(VPYTHON) pymod
+
 .PHONY: rebuild
 rebuild: clean all
