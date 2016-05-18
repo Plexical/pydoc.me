@@ -18,3 +18,11 @@ def search(term):
         return redirect(where)
     else:
         return u"Not found: '{}'".format(term), 404
+
+@app.route('/2/<term>')
+def search2(term):
+    where = url('2', term)
+    if where:
+        return redirect(where)
+    else:
+        return u"Not found: '{}'".format(term), 404

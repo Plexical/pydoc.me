@@ -35,3 +35,20 @@
 2,tee,https://docs.python.org/2/library/itertools.html#itertools.tee
 3,zip_longest,https://docs.python.org/3/library/itertools.html#itertools.zip_longest
 2,izip_longest,https://docs.python.org/2/library/itertools.html#itertools.izip_longest
+-,-,ABC Module
+3,ABCMeta,https://docs.python.org/3/library/abc.html#abc.ABCMeta
+2,ABCMeta,https://docs.python.org/2/library/abc.html#abc.ABCMeta
+3,ABCMeta.register,https://docs.python.org/3/library/abc.html#abc.ABCMeta.register
+2,ABCMeta.register,https://docs.python.org/2/library/abc.html#abc.ABCMeta.register
+3,ABCMeta.__subclasshook__,https://docs.python.org/3/library/abc.html#abc.ABCMeta.__subclasshook__
+2,ABCMeta.__subclasshook__,https://docs.python.org/2/library/abc.html#abc.ABCMeta.__subclasshook__
+3,ABC,https://docs.python.org/3/library/abc.html#abc.ABC
+3,abc.ABC,https://docs.python.org/3/library/abc.html#abc.ABC
+3,abstractmethod,https://docs.python.org/3/library/abc.html#abc.abstractmethod
+2,abstractmethod,https://docs.python.org/2/library/abc.html#abc.abstractmethod
+3,abstractclassmethod,https://docs.python.org/3/library/abc.html#abc.abstractclassmethod
+3,abstractstaticmethod,https://docs.python.org/3/library/abc.html#abc.abstractstaticmethod
+3,abstractproperty,https://docs.python.org/3/library/abc.html#abc.abstractproperty
+2,abstractproperty,https://docs.python.org/2/library/abc.html#abc.abstractproperty
+3,get_cache_token,https://docs.python.org/3/library/abc.html#abc.get_cache_token
+2,get_cache_token,https://docs.python.org/2/library/abc.html#abc.get_cache_token

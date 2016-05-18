@@ -10,17 +10,30 @@ lib3 = lambda page: make(3, 'library', page)
 lib2 = lambda page: make(2, 'library', page)
 expanded = {
     '2': {
+        'abc': lib2('abc.html'),
         'itertools': lib2('itertools.html'),
         'ifilterfalse': lib2('itertools.html#itertools.ifilterfalse'),
         'izip_longest': lib2('itertools.html#itertools.izip_longest'),
 
     },
     '3': {
+        'abc': lib3('abc.html'),
+        'ABC': lib3('abc.html#abc.ABC'),
+        'abc.ABC': lib3('abc.html#abc.ABC'),
         'itertools': lib3('itertools.html'),
         'accumulate': lib3('itertools.html#itertools.accumulate'),
         'zip_longest': lib3('itertools.html#itertools.zip_longest'),
     }
 }
+def abc_same(name):
+    expanded['2'][name] = lib2('abc.html#abc.'+name)
+    expanded['3'][name] = lib3('abc.html#abc.'+name)
+
+for name in ('ABCMeta', 'ABCMeta.register', 'ABCMeta.__subclasshook__',
+             'abstractmethod', 'abstractstaticmethod', 'abstractclassmethod',
+             'abstractproperty', 'get_cache_token'):
+    abc_same(name)
+
 def itertools_same(name):
     expanded['2'][name] = lib2('itertools.html#itertools.'+name)
     expanded['3'][name] = lib3('itertools.html#itertools.'+name)

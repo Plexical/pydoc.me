@@ -1,11 +1,6 @@
-import requests
-from bs4 import BeautifulSoup
+from grabtools import domof, py3b, py2b
+
 from os.path import join
-
-domof = lambda url: BeautifulSoup(requests.get(url).text, 'html.parser')
-
-py3b = 'https://docs.python.org/3'
-py2b = 'https://docs.python.org/2'
 
 dom = domof('https://docs.python.org/3/library/itertools.html')
 for link in dom.findAll('a', {'class': 'headerlink'}):
