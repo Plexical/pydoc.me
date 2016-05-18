@@ -3,13 +3,17 @@ PYTHON=python3
 PROJECT=~/src/oss/pymod.me
 BIN=$(PROJECT)/bin
 PIP=$(BIN)/pip
+VPYTHON=$(BIN)/python
 
 all: env
 
 $(PIP):
 	$(PYTHON) $(VENV)/virtualenv.py $(PROJECT)
 
-env: $(PIP)
+deps: $(PIP)
+	$(VPYTHON) setup.py develop
+
+env: deps
 
 .PHONY: clean
 clean:
