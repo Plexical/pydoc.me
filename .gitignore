@@ -66,3 +66,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+.py2mod
+.py3mod
+.master
