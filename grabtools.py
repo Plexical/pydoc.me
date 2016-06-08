@@ -21,3 +21,9 @@ def modsof(v):
         with open(cache, 'wb') as fp:
             dump(mods, fp)
         return mods
+
+def anchors(name, url):
+    dom = domof(url)
+    class_ = {'class': 'headerlink'}
+    As = (a.attrs['href'].split('#')[1] for a in dom.findAll('a', class_))
+    return [a for a in As if a.startswith(name)]
