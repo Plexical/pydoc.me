@@ -28,7 +28,7 @@ def anchors(name, url):
     As = (a.attrs['href'].split('#')[1] for a in dom.findAll('a', class_))
     return [a for a in As if a.startswith(name)]
 
-def index_modules():
+def modules():
     "Loads all shortcuts from cache or downloads from docs.python.org"
 
     cache = './.modules'

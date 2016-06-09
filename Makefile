@@ -22,7 +22,7 @@ clean:
 
 .PHONY: run
 run:
-	$(VPYTHON) pymod
+	$(VPYTHON) -m pymod --serve
 
 .PHONY: dist
 dist:
