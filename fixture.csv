@@ -6,6 +6,9 @@
 3,asyncio,https://docs.python.org/3/library/asyncio.html
 3,collections,https://docs.python.org/3/library/collections.html
 2,collections,https://docs.python.org/2/library/collections.html
+3,configparser,https://docs.python.org/3/library/configparser.html
+2,ConfigParser,https://docs.python.org/2/library/configparser.html
+2,configparser,https://docs.python.org/2/library/configparser.html
 3,accumulate,https://docs.python.org/3/library/itertools.html#itertools.accumulate
 3,chain,https://docs.python.org/3/library/itertools.html#itertools.chain
 2,chain,https://docs.python.org/2/library/itertools.html#itertools.chain

@@ -51,11 +51,13 @@ mods = modules()
 prio = ['itertools', 'abc', 'argparse']
 
 def url(v, term):
+    if v == '2' and term == 'configparser':
+        term = 'ConfigParser'
     try:
-        return mods[term][v]['M']
+        return mods[term][v]['M'].replace('ConfigParser.html',
+                                          'configparser.html')
     except KeyError:
         pass
-        # print('itertools')
     modn = term.split('.')[0]
     if modn:
         mod = mods.get(modn)
