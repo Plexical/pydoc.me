@@ -1,3 +1,11 @@
+3,itertools,https://docs.python.org/3/library/itertools.html
+2,itertools,https://docs.python.org/2/library/itertools.html
+3,functools,https://docs.python.org/3/library/functools.html
+2,functools,https://docs.python.org/2/library/functools.html
+3,argparse,https://docs.python.org/3/library/argparse.html
+3,asyncio,https://docs.python.org/3/library/asyncio.html
+3,collections,https://docs.python.org/3/library/collections.html
+2,collections,https://docs.python.org/2/library/collections.html
 3,accumulate,https://docs.python.org/3/library/itertools.html#itertools.accumulate
 3,chain,https://docs.python.org/3/library/itertools.html#itertools.chain
 2,chain,https://docs.python.org/2/library/itertools.html#itertools.chain

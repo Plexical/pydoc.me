@@ -51,7 +51,11 @@ mods = modules()
 prio = ['itertools', 'abc', 'argparse']
 
 def url(v, term):
-    # term =  term in shortcuts and shortcuts[term] or term
+    try:
+        return mods[term][v]['M']
+    except KeyError:
+        pass
+        # print('itertools')
     modn = term.split('.')[0]
     if modn:
         mod = mods.get(modn)
