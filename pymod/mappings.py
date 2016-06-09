@@ -48,7 +48,9 @@ for name in ('chain', 'chain.from_iterable', 'combinations',
 from pymod.index import modules
 mods = modules()
 
-prio = ['itertools', 'abc', 'argparse']
+prio = ['itertools', 'functools', 'string', 'math', 'os', 'sys', 'pdb', 'operator',
+        'random', 're', 'shutil', 'struct', 'ssl', 'abc', 'argparse', 'errno',
+        'tempfile', 'textwrap', 'time', 'types', 'uuid', 'warnings', 'xml.dom']
 
 def url(v, term):
     if v == '2' and term == 'configparser':
