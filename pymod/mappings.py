@@ -45,5 +45,22 @@ for name in ('chain', 'chain.from_iterable', 'combinations',
              'tee'):
     itertools_same(name)
 
+from pymod.index import modules
+mods = modules()
+
+prio = ['itertools', 'abc', 'argparse']
+
 def url(v, term):
-    return v in expanded and term in expanded[v] and expanded[v][term] or None
+    # term =  term in shortcuts and shortcuts[term] or term
+    modn = term.split('.')[0]
+    if modn:
+        mod = mods.get(modn)
+        if mod is None:
+            for pname in prio:
+                if pname in mods:
+                    cand = url(v, '{}.{}'.format(pname, term))
+                    if cand:
+                        return cand
+            raise Exception('Not found in prio: {}'.format(term))
+        return v in mod and mod[v].get(term) or None
+    return None

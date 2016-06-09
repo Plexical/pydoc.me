@@ -43,7 +43,6 @@
 3,ABCMeta.__subclasshook__,https://docs.python.org/3/library/abc.html#abc.ABCMeta.__subclasshook__
 2,ABCMeta.__subclasshook__,https://docs.python.org/2/library/abc.html#abc.ABCMeta.__subclasshook__
 3,ABC,https://docs.python.org/3/library/abc.html#abc.ABC
-3,abc.ABC,https://docs.python.org/3/library/abc.html#abc.ABC
 3,abstractmethod,https://docs.python.org/3/library/abc.html#abc.abstractmethod
 2,abstractmethod,https://docs.python.org/2/library/abc.html#abc.abstractmethod
 3,abstractclassmethod,https://docs.python.org/3/library/abc.html#abc.abstractclassmethod
@@ -51,7 +50,6 @@
 3,abstractproperty,https://docs.python.org/3/library/abc.html#abc.abstractproperty
 2,abstractproperty,https://docs.python.org/2/library/abc.html#abc.abstractproperty
 3,get_cache_token,https://docs.python.org/3/library/abc.html#abc.get_cache_token
-2,get_cache_token,https://docs.python.org/2/library/abc.html#abc.get_cache_token
 -,-,argparse module
 3,ArgumentParser,https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser
 2,ArgumentParser,https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser
