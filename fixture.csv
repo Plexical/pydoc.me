@@ -1,5 +1,9 @@
+3,round,https://docs.python.org/3/library/functions.html#round
+2,round,https://docs.python.org/2/library/functions.html#round
 3,False,https://docs.python.org/3/library/constants.html#False
 2,False,https://docs.python.org/2/library/constants.html#False
+3,KeyError,https://docs.python.org/3/library/exceptions.html#KeyError
+2,KeyError,https://docs.python.org/2/library/exceptions.html#KeyError
 3,itertools,https://docs.python.org/3/library/itertools.html
 2,itertools,https://docs.python.org/2/library/itertools.html
 3,functools,https://docs.python.org/3/library/functools.html

@@ -70,9 +70,48 @@ constants = {
 
 mods = modules()
 
+funcs = {'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes',
+         'callable', 'chr', 'classmethod', 'compile', 'complex', 'delattr',
+         'dir', 'divmod', 'enumerate', 'eval', 'exec', 'filter', 'float',
+         'format', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex',
+         'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len',
+         'locals', 'map', 'max', 'min', 'next', 'object', 'oct', 'open',
+         'ord', 'pow', 'print', 'property', 'repr', 'reversed', 'round',
+         'setattr', 'slice', 'sorted', 'staticmethod', 'sum', 'super',
+         'type', 'vars', 'zip', '__import__'}
+
+excs = { 'BaseException', 'BaseException.args', 'Exception', 'StandardError',
+         'ArithmeticError', 'BufferError', 'LookupError', 'EnvironmentError',
+         'AssertionError', 'AttributeError', 'EOFError', 'FloatingPointError',
+         'GeneratorExit', 'IOError', 'ImportError', 'IndexError', 'KeyError',
+         'KeyboardInterrupt', 'MemoryError', 'NameError', 'NotImplementedError',
+         'OSError', 'OverflowError', 'ReferenceError', 'RuntimeError',
+         'StopIteration', 'SyntaxError', 'IndentationError', 'TabError',
+         'SystemError', 'SystemExit', 'TypeError', 'UnboundLocalError',
+         'UnicodeError', 'UnicodeError.encoding', 'UnicodeError.reason',
+         'UnicodeError.object', 'UnicodeError.start', 'UnicodeError.end',
+         'UnicodeEncodeError', 'UnicodeDecodeError', 'UnicodeTranslateError',
+         'ValueError', 'VMSError', 'WindowsError', 'ZeroDivisionError',
+         'Warning', 'UserWarning', 'DeprecationWarning',
+         'PendingDeprecationWarning', 'SyntaxWarning', 'RuntimeWarning',
+         'FutureWarning', 'ImportWarning', 'UnicodeWarning', }
+
+fn3base = 'https://docs.python.org/3/library/functions.html#{}'
+ex3base = 'https://docs.python.org/3/library/exceptions.html#{}'
+fn2base = 'https://docs.python.org/2/library/functions.html#{}'
+ex2base = 'https://docs.python.org/2/library/exceptions.html#exceptions.{}'
+
 def url(v, term):
     if term in constants:
         return constants[term][v]
+    if term in funcs and v == '3':
+        return fn3base.format(term)
+    elif term in funcs and v == '2':
+        return fn2base.format(term)
+    if term in excs and v == '3':
+        return ex3base.format(term)
+    elif term in excs and v == '2':
+        return ex2base.format(term)
     if v == '2' and term == 'configparser':
         term = 'ConfigParser'
     try:
