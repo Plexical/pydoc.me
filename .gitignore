@@ -69,4 +69,4 @@ target/
 
 .py2mod
 .py3mod
-.modules
+pymod/modules.dat

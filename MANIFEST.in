@@ -1,1 +1,2 @@
+include pymod/modules.dat
 recursive-include pymod/templates *.html

@@ -4,6 +4,8 @@ import pymod
 
 requirements = (
     'Flask==0.10.1',
+    'requests==2.10.0',
+    'beautifulsoup4==4.4.1'
 )
 
 setup(

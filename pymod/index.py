@@ -31,7 +31,7 @@ def anchors(name, url):
 def modules():
     "Loads all shortcuts from cache or downloads from docs.python.org"
 
-    cache = './.modules'
+    cache = os.path.join(os.path.dirname(__file__), 'modules.dat')
 
     if os.path.exists(cache):
         with open(cache, 'rb') as fp:
