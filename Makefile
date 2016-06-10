@@ -41,6 +41,7 @@ push-stage: dist
 deploy-stage: config-stage push-stage
 	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade pymod.me-*.tar.gz"
 	make restart-stage
+	rsync -arv static/ wf:~/webapps/pymod_stage_static/
 
 .PHONY: restart-stage
 restart-stage:
