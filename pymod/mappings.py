@@ -1,5 +1,7 @@
 import os
 
+from pymod.index import modules
+
 py3b = 'https://docs.python.org/3'
 py2b = 'https://docs.python.org/2'
 from os.path import join
@@ -45,14 +47,32 @@ for name in ('chain', 'chain.from_iterable', 'combinations',
              'tee'):
     itertools_same(name)
 
-from pymod.index import modules
-mods = modules()
-
 prio = ['itertools', 'functools', 'string', 'math', 'os', 'sys', 'pdb', 'operator',
         'random', 're', 'shutil', 'struct', 'ssl', 'abc', 'argparse', 'errno',
         'tempfile', 'textwrap', 'time', 'types', 'uuid', 'warnings', 'xml.dom']
 
+const = lambda n: {
+    '3': 'https://docs.python.org/3/library/constants.html#{}'.format(n),
+    '2': 'https://docs.python.org/2/library/constants.html#{}'.format(n) }
+
+constants = {
+    'False': const('False'),
+    'True': const('True'),
+    'None': const('None'),
+    'NotImplemented': const('NotImplemented'),
+    'Ellipsis': const('Ellipsis'),
+    '__debug__': const('__debug__'),
+    'quit': const('quit'),
+    'exit': const('exit'),
+    'copyright': const('copyright'),
+    'license': const('license'),
+    'credits': const('credits') }
+
+mods = modules()
+
 def url(v, term):
+    if term in constants:
+        return constants[term][v]
     if v == '2' and term == 'configparser':
         term = 'ConfigParser'
     try:
