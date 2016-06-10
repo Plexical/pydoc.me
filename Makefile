@@ -31,6 +31,7 @@ dist:
 .PHONY: config-stage
 config-stage:
 	scp conf/stage/index.py wf:~/webapps/pymod_stage/htdocs/index.py
+	scp conf/stage/gitignore wf:~/webapps/pymod_stage/.gitignore
 
 .PHONY: push-stage
 push-stage: dist
