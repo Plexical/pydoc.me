@@ -24,8 +24,12 @@ clean:
 run:
 	$(VPYTHON) -m pymod --serve
 
+.PHONY: clean-dist
+clean-dist:
+	rm -rf dist/*
+
 .PHONY: dist
-dist:
+dist: clean-dist
 	$(VPYTHON) setup.py sdist
 
 .PHONY: config-stage
@@ -36,16 +40,35 @@ config-stage:
 .PHONY: push-stage
 push-stage: dist
 	scp dist/pymod.me-*.tar.gz wf:~/webapps/pymod_stage
+	rsync -arv static/ wf:~/webapps/pymod_stage_static/
 
 .PHONY: deploy-stage
 deploy-stage: config-stage push-stage
 	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade pymod.me-*.tar.gz"
 	make restart-stage
-	rsync -arv static/ wf:~/webapps/pymod_stage_static/
 
 .PHONY: restart-stage
 restart-stage:
 	ssh wf "~/webapps/pymod_stage/apache2/bin/restart"
+
+.PHONY: restart-live
+restart-live:
+	ssh wf "~/webapps/pymod_live/apache2/bin/restart"
+
+.PHONY: config-live
+config-live:
+	scp conf/live/index.py wf:~/webapps/pymod_live/htdocs/index.py
+	scp conf/live/gitignore wf:~/webapps/pymod_live/.gitignore
+
+.PHONY: push-live
+push-live: dist
+	scp dist/pymod.me-*.tar.gz wf:~/webapps/pymod_live
+	rsync -arv static/ wf:~/webapps/pymod_live_static/
+
+.PHONY: deploy-stage
+deploy-live: config-live push-live
+	ssh wf "cd ~/webapps/pymod_live && ./bin/pip install --upgrade pymod.me-*.tar.gz"
+	make restart-live
 
 .PHONY: rebuild
 rebuild: clean all
