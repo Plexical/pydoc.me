@@ -5,3 +5,4 @@ lib64
 pip-selfcheck.json
 pymod.me-*
 apache2/logs/
+.DS_Store
