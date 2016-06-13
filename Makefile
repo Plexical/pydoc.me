@@ -1,6 +1,6 @@
 VENV=~/src/ext/python/virtualenv
 PYTHON=python3
-PROJECT=~/src/oss/pydoc.me
+PROJECT=`pwd`
 BIN=$(PROJECT)/bin
 PIP=$(BIN)/pip
 VPYTHON=$(BIN)/python
