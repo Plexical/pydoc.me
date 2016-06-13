@@ -101,6 +101,11 @@ ex3base = 'https://docs.python.org/3/library/exceptions.html#{}'
 fn2base = 'https://docs.python.org/2/library/functions.html#{}'
 ex2base = 'https://docs.python.org/2/library/exceptions.html#exceptions.{}'
 
+specials = {
+    'zen': 'https://www.python.org/dev/peps/pep-0020/',
+    'antigravity': 'http://xkcd.com/353/'
+}
+
 def url(v, term):
     if term in constants:
         return constants[term][v]
@@ -112,6 +117,8 @@ def url(v, term):
         return ex3base.format(term)
     elif term in excs and v == '2':
         return ex2base.format(term)
+    elif term in specials:
+        return specials[term]
     if v == '2' and term == 'configparser':
         term = 'ConfigParser'
     try:

@@ -209,3 +209,7 @@
 2,ArgumentParser.exit,https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser.exit
 3,ArgumentParser.error,https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser.error
 2,ArgumentParser.error,https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser.error
+2,zen,https://www.python.org/dev/peps/pep-0020/
+3,zen,https://www.python.org/dev/peps/pep-0020/
+2,antigravity,http://xkcd.com/353/
+3,antigravity,http://xkcd.com/353/
