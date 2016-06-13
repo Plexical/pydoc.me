@@ -135,6 +135,6 @@ def url(v, term):
                     cand = url(v, '{}.{}'.format(pname, term))
                     if cand:
                         return cand
-            raise Exception('Not found in prio: {}'.format(term))
+            return None
         return v in mod and mod[v].get(term) or None
     return None

@@ -10,3 +10,6 @@ def fixtures():
 @pytest.mark.parametrize("version,term,expected", fixtures())
 def test_mappings(version, term, expected):
     assert url(version, term) == expected, "Can't find {}".format(term)
+
+def test_term_not_found():
+    assert url('3', 'dontexist') == None
