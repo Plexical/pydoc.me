@@ -1,10 +1,10 @@
 VENV=~/src/ext/python/virtualenv
 PYTHON=python3
-PROJECT=`pwd`
+PROJECT=$(shell pwd)
 BIN=$(PROJECT)/bin
 PIP=$(BIN)/pip
 VPYTHON=$(BIN)/python
-VERSION=`$(VPYTHON) -c "import pymod; print(pymod.vstr())"`
+VERSION=$(shell $(VPYTHON) -c "import pymod; print(pymod.vstr())")
 PKGNAME=pymod.me-$(VERSION).tar.gz
 
 all: env
