@@ -51,11 +51,11 @@ deploy-stage: config-stage push-stage
 
 .PHONY: restart-stage
 restart-stage:
-	ssh wf "~/webapps/pymod_stage/apache2/bin/restart"
+	ssh wf "~/bin/pydoc-stage-restart"
 
 .PHONY: restart-live
 restart-live:
-	ssh wf "~/webapps/pymod_live/apache2/bin/restart"
+	ssh wf "~/bin/pydoc-live-restart"
 
 .PHONY: config-live
 config-live:
