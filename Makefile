@@ -4,6 +4,8 @@ PROJECT=~/src/oss/pydoc.me
 BIN=$(PROJECT)/bin
 PIP=$(BIN)/pip
 VPYTHON=$(BIN)/python
+VERSION=`$(VPYTHON) -c "import pymod; print(pymod.vstr())"`
+PKGNAME=pymod.me-$(VERSION).tar.gz
 
 all: env
 
@@ -39,12 +41,12 @@ config-stage:
 
 .PHONY: push-stage
 push-stage: dist
-	scp dist/pymod.me-*.tar.gz wf:~/webapps/pymod_stage
+	scp dist/$(PKGNAME) wf:~/webapps/pymod_stage
 	rsync -arv static/ wf:~/webapps/pymod_stage_static/
 
 .PHONY: deploy-stage
 deploy-stage: config-stage push-stage
-	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade pymod.me-*.tar.gz"
+	ssh wf "cd ~/webapps/pymod_stage && ./bin/pip install --upgrade $(PKGNAME)"
 	make restart-stage
 
 .PHONY: restart-stage
@@ -65,9 +67,9 @@ push-live: dist
 	scp dist/pymod.me-*.tar.gz wf:~/webapps/pymod_live
 	rsync -arv static/ wf:~/webapps/pymod_live_static/
 
-.PHONY: deploy-stage
+.PHONY: deploy-live
 deploy-live: config-live push-live
-	ssh wf "cd ~/webapps/pymod_live && ./bin/pip install --upgrade pymod.me-*.tar.gz"
+	ssh wf "cd ~/webapps/pymod_live && ./bin/pip install --upgrade $(PKGNAME)"
 	make restart-live
 
 .PHONY: rebuild
