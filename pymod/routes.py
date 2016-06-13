@@ -17,7 +17,7 @@ def search(term):
     if where:
         return redirect(where)
     else:
-        return u"Not found: '{}'".format(term), 404
+        return flask.render_template('not-found.html', term=term), 404
 
 @app.route('/2/<term>')
 def search2(term):
@@ -25,4 +25,4 @@ def search2(term):
     if where:
         return redirect(where)
     else:
-        return u"Not found: '{}'".format(term), 404
+        return flask.render_template('not-found.html', term=term), 404

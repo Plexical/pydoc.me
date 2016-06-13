@@ -1,0 +1,52 @@
+<!-- -*- mode:web -*- -->
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Jacob Oscarson <jacob@plexical.com>">
+    <title>No mapping for {{term}}.</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link
+        href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+        rel="stylesheet" type="text/css">
+
+    <style>
+     body {
+       font-family: 'Roboto', sans-serif;
+       font-weight:400;
+       background-color: #eee;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="hero" class="container">
+      <div id="hero-row" class="row">
+        <div id="hero-text" class="col-md-6" style="margin-top:50px;">
+          <h4>Not found - '{{term}}'</h4>
+          <p>
+            Sorry, but the term <em>'{{term}}'</em> can't be found/have
+            not been mapped yet by <em>pydoc.me</em>.
+          </p>
+          <p>
+            If you feel it ought to, please have a look at the
+            <a href="https://github.com/Plexical/pydoc.me">sources</a>,
+            it's a fairly straight-forward Flask app. Pull requests
+            highly welcome, or you could always try logging an issue
+            and if I find it appropriate and reasonably easy I might
+            add it for you.
+          </p>
+          <p><a href="http://jacob414.plexical.com">/Jacob</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
