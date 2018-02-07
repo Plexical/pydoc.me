@@ -80,6 +80,13 @@ funcs = {'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes',
          'setattr', 'slice', 'sorted', 'staticmethod', 'sum', 'super',
          'type', 'vars', 'zip', '__import__'}
 
+structs = {
+    'dict': 'dictionaries',
+    'set': 'sets',
+    'tuple': 'tuples-and-sequences',
+    'list': 'more-on-lists'
+}
+
 excs = { 'BaseException', 'BaseException.args', 'Exception', 'StandardError',
          'ArithmeticError', 'BufferError', 'LookupError', 'EnvironmentError',
          'AssertionError', 'AttributeError', 'EOFError', 'FloatingPointError',
@@ -97,6 +104,7 @@ excs = { 'BaseException', 'BaseException.args', 'Exception', 'StandardError',
          'FutureWarning', 'ImportWarning', 'UnicodeWarning', }
 
 fn3base = 'https://docs.python.org/3/library/functions.html#{}'
+structbase = 'https://docs.python.org/{}/tutorial/datastructures.html#{}'
 ex3base = 'https://docs.python.org/3/library/exceptions.html#{}'
 fn2base = 'https://docs.python.org/2/library/functions.html#{}'
 ex2base = 'https://docs.python.org/2/library/exceptions.html#exceptions.{}'
@@ -113,6 +121,9 @@ def url(v, term):
         return fn3base.format(term)
     elif term in funcs and v == '2':
         return fn2base.format(term)
+    if term in structs:
+        return structbase.format(v, structs[term])
+        return structbase.format(term)
     if term in excs and v == '3':
         return ex3base.format(term)
     elif term in excs and v == '2':
